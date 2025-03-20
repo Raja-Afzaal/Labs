@@ -23,15 +23,15 @@ struct Order
 };
 
 MenuItem breakfastMenu[MAX_ITEMS] = {
-    {1, "1.Baghrir", 5.99, 10}, {2, "2. Msemen", 4.99, 8}, {3, "3.Harira Soup", 2.50, 15}
+    {1, "1.Baghrir", 500, 10}, {2, "2. Msemen", 400, 8}, {3, "3.Harira Soup", 700, 15}
 };
 
 MenuItem lunchMenu[MAX_ITEMS] = {
-    {1, "1.Chicken Pastilla", 8.99, 10}, {2, "2.Maakouda ", 10.99, 5}, {3, "3.Zaalouk", 1.99, 20}
+    {1, "1.Chicken Pastilla", 1000, 10}, {2, "2.Maakouda ", 1100, 5}, {3, "3.Zaalouk", 900, 20}
 };
 
 MenuItem dinnerMenu[MAX_ITEMS] = {
-    {1, "1.Kefta Tagine", 15.99, 7}, {2, "2.Mechoui", 12.50, 10}, {3, "3.Fish Chermoula", 6.99, 12}
+    {1, "1.Kefta Tagine", 1500, 7}, {2, "2.Mechoui", 1200, 10}, {3, "3.Fish Chermoula", 1500, 12}
 };
 
 void getMenu(MenuItem menu[], int &size) 
@@ -89,7 +89,7 @@ void takeOrder(Order &order, MenuItem menu[], int size)
             } 
 			else 
 			{
-                cout << "Sorry, stock!\n";
+                cout << "Sorry, We are out of stock!\n";
             }
         } 
 		else 
@@ -115,7 +115,7 @@ void generateBill(Order &order, MenuItem menu[], int size) {
         cout << setw(10) << menu[id].name << setw(10) << order.quantity[i] << setw(10) << price << setw(10) << itemTotal << endl;
     }
     cout << "--------------------------------------\n";
-    cout << "Grand Total: $" << total << endl;
+    cout << "Grand Total: RS." << total << endl;
 }
 
 void saveOrderToFile(Order &order, MenuItem menu[], int size) {
